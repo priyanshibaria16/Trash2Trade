@@ -18,7 +18,7 @@ const indianCities = [
 ];
 
 // Approx city coordinates (centroids)
-const cityCoords, { lat: number; lon: number }> = {
+const cityCoords = {
   Mumbai: { lat: 19.0760, lon: 72.8777 },
   Delhi: { lat: 28.6139, lon: 77.2090 },
   Bengaluru: { lat: 12.9716, lon: 77.5946 },
@@ -56,8 +56,8 @@ function makeAddress(city) { return `${randInt(1, 999)}, ${['MG Road','MG Rd','S
 async function seedUsers(count = 50) {
   console.log('Seeding users...');
   const passwordHash = await hashPassword('Password@123');
-  const roles: Array<'citizen'|'collector'|'ngo'> = ['citizen','collector','ngo'];
-  const insertedUserIds: number[] = [];
+  const roles = ['citizen','collector','ngo'];
+  const insertedUserIds = [];
 
   for (let i = 0; i < count; i++) {
     const first = pick(indianFirstNames);
@@ -102,7 +102,7 @@ async function seedRewards(count = 50) {
   console.log(`Inserted ~${inserted} rewards.`);
 }
 
-async function seedPickups(userIds: number[], count = 50) {
+async function seedPickups(userIds, count = 50) {
   console.log('Seeding pickups...');
   let inserted = 0;
   const citizenIds = userIds.filter((_, idx) => idx % 3 === 0); // approximate citizens created
@@ -130,7 +130,7 @@ async function seedPickups(userIds: number[], count = 50) {
   console.log(`Inserted ~${inserted} pickups.`);
 }
 
-async function seedPayments(userIds: number[], count = 50) {
+async function seedPayments(userIds, count = 50) {
   console.log('Seeding payments...');
   let inserted = 0;
   for (let i = 0; i < count; i++) {
