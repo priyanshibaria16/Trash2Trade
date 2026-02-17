@@ -1,0 +1,21 @@
+{
+  "name": "trash2trade-nexothon",
+  "version": "1.0.0",
+  "description": "Smart Recycling Ecosystem - Tech-powered recycling platform",
+  "scripts": {
+    "dev": "npm run dev:backend & npm run dev:frontend",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "build:frontend": "cd frontend && npm run build",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "start:backend": "cd backend && npm start"
+  },
+  "keywords": [
+    "recycling",
+    "waste-management",
+    "sustainability",
+    "green-tech"
+  ],
+  "author": "",
+  "license": "ISC"
+}
