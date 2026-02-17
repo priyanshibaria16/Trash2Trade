@@ -31,7 +31,7 @@ app.get('/api/health', (req, res) => {
 });
 
 // Global error handler
-app.use((err, req: express.Request, res: express.Response, next: express.NextFunction) => {
+app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ message: 'Something went wrong!' });
 });
