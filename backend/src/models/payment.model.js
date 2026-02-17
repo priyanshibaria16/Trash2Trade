@@ -56,8 +56,8 @@ export const getPaymentsByUserId = async (userId)=> {
  */
 export const updatePaymentStatus = async (
   id,
-  status: 'pending' | 'completed' | 'failed' | 'refunded',
-  transactionId?)=> {
+  status,
+  transactionId) => {
   const query = `
     UPDATE payments 
     SET status = $1, transaction_id = $2, updated_at = CURRENT_TIMESTAMP
