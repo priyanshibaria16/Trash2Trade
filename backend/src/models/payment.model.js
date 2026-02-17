@@ -1,5 +1,4 @@
 import pool from '../config/db.js';
-import { Payment, PaymentCreation } from './Payment.js';
 
 /**
  * Create a new payment record

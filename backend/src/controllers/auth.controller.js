@@ -1,6 +1,5 @@
 import { findUserByEmail, createUser, findUserById } from '../models/user.model.js';
 import { comparePasswords, generateToken } from '../utils/auth.utils.js';
-import { UserRegistration, UserWithoutPassword } from '../models/User.js';
 
 /**
  * User login
