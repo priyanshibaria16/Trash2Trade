@@ -1,5 +1,5 @@
-import pool from '../config/db';
-import { Pickup, PickupCreation, PickupUpdate } from './Pickup';
+import pool from '../config/db.js';
+import { Pickup, PickupCreation, PickupUpdate } from './Pickup.js';
 
 // Normalize coordinates: if invalid or near (0,0), treat as null to avoid ocean pins
 const normalizeCoords = (row) => {

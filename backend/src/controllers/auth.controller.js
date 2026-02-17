@@ -1,7 +1,6 @@
-import { Request, Response } from 'express';
-import { findUserByEmail, createUser, findUserById } from '../models/user.model';
-import { comparePasswords, generateToken } from '../utils/auth.utils';
-import { UserRegistration, UserWithoutPassword } from '../models/User';
+import { findUserByEmail, createUser, findUserById } from '../models/user.model.js';
+import { comparePasswords, generateToken } from '../utils/auth.utils.js';
+import { UserRegistration, UserWithoutPassword } from '../models/User.js';
 
 /**
  * User login

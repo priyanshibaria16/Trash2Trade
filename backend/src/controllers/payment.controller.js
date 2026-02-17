@@ -1,5 +1,4 @@
-import { Request, Response } from 'express';
-import { createPayment, getPaymentsByUserId, getPaymentById, updatePaymentStatus } from '../models/payment.model';
+import { createPayment, getPaymentsByUserId, getPaymentById, updatePaymentStatus } from '../models/payment.model.js';
 
 /**
  * Create a new payment

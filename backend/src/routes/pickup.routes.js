@@ -8,8 +8,8 @@ import {
   updatePickupStatus,
   deletePickupRequest,
   getUserStats
-} from '../controllers/pickup.controller';
-import { authenticate } from '../middleware/auth.middleware';
+} from '../controllers/pickup.controller.js';
+import { authenticate } from '../middleware/auth.middleware.js';
 
 const router = Router();
 

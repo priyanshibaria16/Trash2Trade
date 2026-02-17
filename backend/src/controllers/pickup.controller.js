@@ -1,4 +1,3 @@
-import { Request, Response } from 'express';
 import {
   createPickup,
   getPickupsByUserId,
@@ -8,7 +7,7 @@ import {
   updatePickup,
   deletePickup,
   getUserPickupStats
-} from '../models/pickup.model';
+} from '../models/pickup.model.js';
 
 /**
  * Create a new pickup request

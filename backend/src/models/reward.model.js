@@ -1,5 +1,5 @@
-import pool from '../config/db';
-import { Reward, UserReward } from './Reward';
+import pool from '../config/db.js';
+import { Reward, UserReward } from './Reward.js';
 
 /**
  * Get all active rewards

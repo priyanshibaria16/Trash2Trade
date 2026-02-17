@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { getRewards, redeemUserReward, getUserRewardHistory } from '../controllers/reward.controller';
-import { authenticate } from '../middleware/auth.middleware';
+import { getRewards, redeemUserReward, getUserRewardHistory } from '../controllers/reward.controller.js';
+import { authenticate } from '../middleware/auth.middleware.js';
 
 const router = Router();
 

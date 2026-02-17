@@ -1,12 +1,12 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import authRoutes from './routes/auth.routes';
-import pickupRoutes from './routes/pickup.routes';
-import rewardRoutes from './routes/reward.routes';
-import paymentRoutes from './routes/payment.routes';
-import passwordRoutes from './routes/password.routes';
-import pool from './config/db';
+import authRoutes from './routes/auth.routes.js';
+import pickupRoutes from './routes/pickup.routes.js';
+import rewardRoutes from './routes/reward.routes.js';
+import paymentRoutes from './routes/payment.routes.js';
+import passwordRoutes from './routes/password.routes.js';
+import pool from './config/db.js';
 
 // Load environment variables
 dotenv.config();

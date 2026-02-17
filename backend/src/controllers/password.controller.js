@@ -1,6 +1,5 @@
-import { Request, Response } from 'express';
-import { findUserByEmail, updateUserPassword } from '../models/user.model';
-import { hashPassword } from '../utils/auth.utils';
+import { findUserByEmail, updateUserPassword } from '../models/user.model.js';
+import { hashPassword } from '../utils/auth.utils.js';
 
 /**
  * Request password reset

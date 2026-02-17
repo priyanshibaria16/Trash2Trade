@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
-import pool from '../config/db';
-import { hashPassword } from '../utils/auth.utils';
+import pool from '../config/db.js';
+import { hashPassword } from '../utils/auth.utils.js';
 
 dotenv.config();
 

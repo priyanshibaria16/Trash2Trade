@@ -1,5 +1,4 @@
-import { Request, Response, NextFunction } from 'express';
-import { verifyToken } from '../utils/auth.utils';
+import { verifyToken } from '../utils/auth.utils.js';
 
 /**
  * Authentication middleware

@@ -1,5 +1,5 @@
-import pool from '../config/db';
-import { User, UserRegistration, UserWithoutPassword } from './User';
+import pool from '../config/db.js';
+import { User, UserRegistration, UserWithoutPassword } from './User.js';
 import { hashPassword } from '../utils/auth.utils';
 
 /**

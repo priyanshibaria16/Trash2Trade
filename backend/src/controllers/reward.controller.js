@@ -1,6 +1,5 @@
-import { Request, Response } from 'express';
-import { getActiveRewards, redeemReward, getUserRewards } from '../models/reward.model';
-import { findUserById } from '../models/user.model';
+import { getActiveRewards, redeemReward, getUserRewards } from '../models/reward.model.js';
+import { findUserById } from '../models/user.model.js';
 
 /**
  * Get all active rewards
