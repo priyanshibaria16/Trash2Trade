@@ -26,7 +26,7 @@ export const authenticate = (req, res, next)=> {
     const decoded = verifyToken(token);
     
     // Attach user data to request
-    (req as any).user = decoded;
+    req.user = decoded;
     
     // Continue to next middleware
     next();

@@ -122,7 +122,7 @@ export const register = async (req, res)=> {
 export const getProfile = async (req, res)=> {
   try {
     // Get user ID from request (set by auth middleware)
-    const userId = (req as any).user.id;
+    const userId = req.user.id;
 
     // Find user by ID
     const user = await findUserById(userId);

@@ -17,7 +17,7 @@ import {
  */
 export const createPickupRequest = async (req, res)=> {
   try {
-    const userId = (req as any).user.id;
+    const userId = req.user.id;
     const pickupData = req.body;
 
     // Validate required fields
@@ -61,7 +61,7 @@ export const createPickupRequest = async (req, res)=> {
  */
 export const getUserPickups = async (req, res)=> {
   try {
-    const userId = (req as any).user.id;
+    const userId = req.user.id;
     
     const pickups = await getPickupsByUserId(userId);
     
@@ -84,7 +84,7 @@ export const getUserPickups = async (req, res)=> {
  */
 export const getCollectorPickups = async (req, res)=> {
   try {
-    const collectorId = (req as any).user.id;
+    const collectorId = req.user.id;
     
     const pickups = await getPickupsByCollectorId(collectorId);
     
@@ -146,8 +146,8 @@ export const getPickup = async (req, res)=> {
     }
     
     // Check if user has permission to view this pickup
-    const userId = (req as any).user.id;
-    const userRole = (req as any).user.role;
+    const userId = req.user.id;
+    const userRole = req.user.role;
     
     if (userRole === 'citizen' && pickup.user_id !== userId) {
       return res.status(403).json({
@@ -207,8 +207,8 @@ export const updatePickupStatus = async (req, res)=> {
     }
     
     // Check permissions
-    const userId = (req as any).user.id;
-    const userRole = (req as any).user.role;
+    const userId = req.user.id;
+    const userRole = req.user.role;
     
     // Citizens can only cancel their own pickups
     if (userRole === 'citizen') {
@@ -305,8 +305,8 @@ export const deletePickupRequest = async (req, res)=> {
     }
     
     // Check if user has permission to delete this pickup
-    const userId = (req as any).user.id;
-    const userRole = (req as any).user.role;
+    const userId = req.user.id;
+    const userRole = req.user.role;
     
     if (userRole === 'citizen' && currentPickup.user_id !== userId) {
       return res.status(403).json({
@@ -343,7 +343,7 @@ export const deletePickupRequest = async (req, res)=> {
  */
 export const getUserStats = async (req, res)=> {
   try {
-    const userId = (req as any).user.id;
+    const userId = req.user.id;
     
     const stats = await getUserPickupStats(userId);
     

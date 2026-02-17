@@ -30,7 +30,7 @@ export const getRewards = async (req, res)=> {
  */
 export const redeemUserReward = async (req, res)=> {
   try {
-    const userId = (req as any).user.id;
+    const userId = req.user.id;
     const { rewardId } = req.body;
     
     if (!rewardId) {
@@ -45,7 +45,7 @@ export const redeemUserReward = async (req, res)=> {
     // Update user's green coins in the request object
     const updatedUser = await findUserById(userId);
     if (updatedUser) {
-      (req as any).user.green_coins = updatedUser.green_coins;
+      req.user.green_coins = updatedUser.green_coins;
     }
     
     return res.status(200).json({
@@ -75,7 +75,7 @@ export const redeemUserReward = async (req, res)=> {
  */
 export const getUserRewardHistory = async (req, res)=> {
   try {
-    const userId = (req as any).user.id;
+    const userId = req.user.id;
     
     const rewards = await getUserRewards(userId);
     

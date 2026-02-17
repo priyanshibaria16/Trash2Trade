@@ -8,7 +8,7 @@ import { createPayment, getPaymentsByUserId, getPaymentById, updatePaymentStatus
  */
 export const createPaymentRequest = async (req, res)=> {
   try {
-    const userId = (req as any).user.id;
+    const userId = req.user.id;
     const { amount, currency, paymentMethod } = req.body;
 
     // Validate required fields
@@ -52,7 +52,7 @@ export const createPaymentRequest = async (req, res)=> {
  */
 export const getUserPayments = async (req, res)=> {
   try {
-    const userId = (req as any).user.id;
+    const userId = req.user.id;
     
     const payments = await getPaymentsByUserId(userId);
     
@@ -93,7 +93,7 @@ export const getPayment = async (req, res)=> {
     }
     
     // Check if user has permission to view this payment
-    const userId = (req as any).user.id;
+    const userId = req.user.id;
     
     if (payment.user_id !== userId) {
       return res.status(403).json({
